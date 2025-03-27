@@ -1,48 +1,61 @@
-let humanChoice = 'rock'
-let randomizer = Math.floor(Math.random() * 3)
-let computerChoice = 'Rock'.toLowerCase()
 let humanScore = 0;
 let computerScore = 0;
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-// Leaving getHumanChoice empty for future use
 function getHumanChoice() {
-
+  // Change humanChoice to ask for prompt later
+  let humanChoice = 'rOck'.toLowerCase();
+  return humanChoice;
 }
 
-function getComputerChoice(theChoice) {
-    switch (theChoice) {
+
+function getComputerChoice() {
+  let randomizer = Math.floor(Math.random() * 3);
+  let computerChoice = randomizer;
+    switch (computerChoice) {
         case 0:
-            return 'rock'
+            return 'rock';
             break;
         case 1:
-            return 'paper'
+            return 'paper';
             break;
         case 2:
-            return 'scissors'
+            return 'scissors';
     }
 }
 
-if (
+
+function playRound(humanChoice, computerChoice){
+  if (
     (computerChoice === 'rock' && humanChoice === 'scissors') ||
     (computerChoice === 'paper' && humanChoice === 'rock') ||
     (computerChoice === 'scissors' && humanChoice === 'paper')
-) {
-    console.log("You Lose")
+) { 
+    computerScore++;
+    console.log(`Your Score is ${humanScore} and Computer's Score is ${computerScore}`);
+    console.log("You Lose");
 } else if (
     (computerChoice === 'scissors' && humanChoice === 'rock') ||
     (computerChoice === 'rock' && humanChoice === 'paper') ||
     (computerChoice === 'paper' && humanChoice === 'scissors')
-) {
-    console.log("You Win")
+) { 
+    humanScore++;
+    console.log(`Your Score is ${humanScore} and Computer's Score is ${computerScore}`)
+    console.log("You Win");
 }
 else if(
     (computerChoice === 'scissors' && humanChoice === 'scissors') ||
     (computerChoice === 'rock' && humanChoice === 'rock') ||
     (computerChoice === 'paper' && humanChoice === 'paper')
-) {
-    console.log("It's a tie!")
+) { 
+    console.log("It's a tie!");
 } else {
-    console.log("Enter correct values")
+    console.log("Enter correct values");
+  }
 }
 
-console.log(computerChoice)
+playRound(humanSelection, computerSelection);
+console.log(humanSelection);
+console.log(computerSelection);
+
