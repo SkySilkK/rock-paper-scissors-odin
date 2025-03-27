@@ -1,4 +1,4 @@
-let userChoice = 'rock'
+let humanChoice = 'rock'
 let randomizer = Math.floor(Math.random() * 3)
 let computerChoice = 'Rock'.toLowerCase()
 let humanScore = 0;
@@ -23,22 +23,22 @@ function getComputerChoice(theChoice) {
 }
 
 if (
-    (computerChoice === 'rock' && userChoice === 'scissors') ||
-    (computerChoice === 'paper' && userChoice === 'rock') ||
-    (computerChoice === 'scissors' && userChoice === 'paper')
+    (computerChoice === 'rock' && humanChoice === 'scissors') ||
+    (computerChoice === 'paper' && humanChoice === 'rock') ||
+    (computerChoice === 'scissors' && humanChoice === 'paper')
 ) {
     console.log("You Lose")
 } else if (
-    (computerChoice === 'scissors' && userChoice === 'rock') ||
-    (computerChoice === 'rock' && userChoice === 'paper') ||
-    (computerChoice === 'paper' && userChoice === 'scissors')
+    (computerChoice === 'scissors' && humanChoice === 'rock') ||
+    (computerChoice === 'rock' && humanChoice === 'paper') ||
+    (computerChoice === 'paper' && humanChoice === 'scissors')
 ) {
     console.log("You Win")
 }
 else if(
-    (computerChoice === 'scissors' && userChoice === 'scissors') ||
-    (computerChoice === 'rock' && userChoice === 'rock') ||
-    (computerChoice === 'paper' && userChoice === 'paper')
+    (computerChoice === 'scissors' && humanChoice === 'scissors') ||
+    (computerChoice === 'rock' && humanChoice === 'rock') ||
+    (computerChoice === 'paper' && humanChoice === 'paper')
 ) {
     console.log("It's a tie!")
 } else {
